@@ -13,3 +13,5 @@ Within each state’s directory you’ll find:
 
 And when available:
 * A shapefile of voting precincts with election results and congressional plans
+
+_The products of this project should be considered public and freely shareable.  Please cite this repo and credit the Metric Geometry and Gerrymandering Group._
