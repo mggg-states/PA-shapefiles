@@ -1,5 +1,5 @@
 # Pennsylvania Election Shapefile
-This shapefile was compiled and processed by members of the Voting Rights Data Institute. 
+This shapefile was processed by members of the Voting Rights Data Institute. 
 The Voting Rights Data Institute (VRDI) was a 2018 summer intensive sponsored by the Metric 
 Geometry and Gerrymandering Group (MGGG) at Tufts and MIT, with major support from a Bose 
 Research Grant at MIT and from the Jonathon M. Tisch College of Civic Life at Tufts.
@@ -14,7 +14,7 @@ The VRDI team used several preprocessing tools (all available in https://github.
 to prepare the output shapefile for analysis: 
 * donut_removal.py was used to simplify the shapefile geometries ensuring that no units contained any other units within it.
 * county_split.py was used to ensure that VTDs do not overlap with multiple counties 
-* faster_proration_with_counties.py was used to prorate the Black/African American population from Census blocks to VTDs
+* faster_proration_with_counties.py was used to prorate election results from precinct shapefile to VTDs and to prorate population from US Census blocks to VTDs
 * used roundoff from prorationtAndRoundoff.py to match districting plans to VTDs
 
 ## Metadata
@@ -71,3 +71,5 @@ Below is a brief description of each of the listed variables in the attribute ta
 ## Projection
 The shapefile uses a WGS 84 geographic coordinate system.
 
+## Rating
+We give this shapefile a C rating as election results were compiled by a private individual rather than by ourselves or the Secretary of State's offce. While election results were verified at the state and county levels, we acknowledge the possibility of error at the sub-county level.
