@@ -10,7 +10,7 @@ The VTDs are from 2011. Election data was compiled at the precinct level by a pr
 and was found to be within 1% of the official state-reported results at the county and state levels.
 
 ## Processing
-The VRDI team used several preprocessing tools (all available in https://github.com/gerrymandr/Preprocessing) 
+The VRDI team used several [preprocessing tools](https://github.com/gerrymandr/Preprocessing) 
 to prepare the output shapefile for analysis: 
 * donut_removal.py was used to simplify the shapefile geometries ensuring that no units contained any other units within it.
 * county_split.py was used to ensure that VTDs do not overlap with multiple counties 
