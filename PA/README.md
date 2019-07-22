@@ -57,7 +57,7 @@ Below is a brief description of each of the listed variables in the attribute ta
 - `GOV`: Congressional district ID in Governor’s counter-proposed plan
 - `TS`: Congressional district ID in Turzai-Scarnati Plan
 - `REMEDIAL_P`: Congressional district ID in 2018 enacted remedial plan
-- `538CPCT_1`: Congressional district ID in 538’s compactness favoring plan
+- `538CPCT__1`: Congressional district ID in 538’s compactness favoring plan
 - `538DEM_PL`: Congressional district ID in 538’s Democratic favoring plan
 - `538GOP_PL`: Congressional district ID in 538’s Republican favoring plan
 - `8THGRADE_1`: Congressional district ID in Jon Kimmel’s eighth grade class’s second redistricting plan
