@@ -1,28 +1,22 @@
 # Pennsylvania Election Shapefile
-This shapefile was processed by members of the Voting Rights Data Institute. 
+This shapefile was processed by MGGG staff and members of the Voting Rights Data Institute. 
 The Voting Rights Data Institute (VRDI) was a 2018 summer intensive sponsored by the Metric 
 Geometry and Gerrymandering Group (MGGG) at Tufts and MIT, with major support from a Bose 
 Research Grant at MIT and from the Jonathon M. Tisch College of Civic Life at Tufts.
 
 ## Sources
-The raw, unprocessed voting tabulation districts (VTDs) were collected from the US Census Bureau website. 
-The VTDs are from 2011. Election data was compiled at the precinct level by a private individual 
-and was found to be within 1% of the official state-reported results at the county and state levels.
+The 2011 voting tabulation district (VTD) and 2010 census block shapefiles were obtained from the US Census Bureau’s [TIGER/Line Shapefiles](https://www.census.gov/geographies/mapping-files/time-series/geo/tiger-line-file.html). Block level demographic data for the 2010 Decennial Census were retrieved using the [Census API](https://api.census.gov/data/2010/dec/sf1). Election data was compiled at the precinct level by a private individual 
+and was found to be within 1% of the official state-reported results at the county and state levels. 
 
 ## Processing
-The VRDI team used several [preprocessing tools](https://github.com/gerrymandr/Preprocessing) 
-to prepare the output shapefile for analysis: 
-* donut_removal.py was used to simplify the shapefile geometries ensuring that no units contained any other units within it.
-* county_split.py was used to ensure that VTDs do not overlap with multiple counties 
-* faster_proration_with_counties.py was used to prorate election results from precinct shapefile to VTDs and to prorate population from US Census blocks to VTDs
-* used roundoff from prorationtAndRoundoff.py to match districting plans to VTDs
+Demographic data were aggregated from the census block level and precincts were assigned to districts using [MGGG's proration software](https://github.com/mggg/maup). Election data were also prorated onto VTDs from the original precinct shapefile using the `maup` package.
 
 ## Metadata
 Below is a brief description of each of the listed variables in the attribute table of the VTD shapefile:
 - `STATEFP10`: State FIPS code
 - `COUNTYFP10`: County FIPS code
 - `VTDST10`: Voting tabulation district FIPS code
-- `GEOID10`: 8-digit FIPS code
+- `GEOID10`: VTD FIPS code
 - `VTDI10`: 2010 Census voting district indicator
 - `NAME10`: Voting tabulation district name
 - `NAMELSAD10`: Translated statistical area description code
@@ -33,6 +27,31 @@ Below is a brief description of each of the listed variables in the attribute ta
 - `AWATER10`: Area water (square meters)
 - `INTPTLAT10`: Latitude of internal point
 - `INTPTLONG10`: Longitude of internal point
+- `TOTPOP`: Total population in 2010 Census
+- `NH_WHITE`: White, non-hispanic, population in 2010 Census
+- `NH_BLACK`: Black, non-hispanic, population in 2010 Census
+- `NH_AMIN`: American Indian and Alaska Native, non-hispanic, population in 2010 Census
+- `NH_ASIAN`: Asian, non-hispanic, population in 2010 Census
+- `NH_NHPI`: Native Hawaiian and Pacific Islander, non-hispanic, population in 2010 Census
+- `NH_OTHER`: Other race, non-hispanic, population in 2010 Census
+- `NH_2MORE`: Two or more races, non-hispanic, population in 2010 Census
+- `HISP`: Hispanic population in 2010 Census
+- `H_WHITE`: White, hispanic, population in 2010 Census
+- `H_BLACK`: Black, hispanic, population in 2010 Census
+- `H_AMIN`: American Indian and Alaska Native, hispanic, population in 2010 Census
+- `H_ASIAN`: Asian, hispanic, population in 2010 Census
+- `H_NHPI`: Native Hawaiian and Pacific Islander, hispanic, population in 2010 Census
+- `H_OTHER`: Other race, hispanic, population in 2010 Census
+- `H_2MORE`: Two or more races, hispanic, population in 2010 Census
+- `VAP`: Total voting age population in 2010 Census
+- `HVAP`: Hispanic voting age population in 2010 Census
+- `WVAP`: White, non-hispanic, voting age population in 2010 Census
+- `BVAP`: Black, non-hispanic, voting age population in 2010 Census
+- `AMINVAP`: American Indian and Alaska Native, non-hispanic, voting age population in 2010 Census
+- `ASIANVAP`: Asian, non-hispanic, voting age population in 2010 Census
+- `NHPIVAP`: Native Hawaiian and Pacific Islander, non-hispanic, voting age population in 2010 Census
+- `OTHERVAP`: Other race, non-hispanic, voting age population in 2010 Census
+- `2MOREVAP`: Two or more races, non-hispanic, voting age population in 2010 Census
 - `ATG12D`: Number of votes for 2012 Democratic attorney general candidate
 - `ATG12R`: Number of votes for 2012 Republican attorney general candidate
 - `F2014GOVD`: Number of votes for 2014 Democratic gubernatorial candidate
@@ -53,20 +72,15 @@ Below is a brief description of each of the listed variables in the attribute ta
 - `T16SENR`: Number of votes for 2016 Republican senate candidate
 - `USS12D`: Number of votes for 2012 Democratic senate candidate
 - `USS12R`: Number of votes for 2012 Republican senate candidate
-- `2011_PLA_1`: Congressional district ID in 2011 enacted congressional map
+- `REMEDIAL`: Congressional district ID in 2018 enacted remedial plan
 - `GOV`: Congressional district ID in Governor’s counter-proposed plan
 - `TS`: Congressional district ID in Turzai-Scarnati Plan
-- `REMEDIAL_P`: Congressional district ID in 2018 enacted remedial plan
-- `538CPCT__1`: Congressional district ID in 538’s compactness favoring plan
-- `538DEM_PL`: Congressional district ID in 538’s Democratic favoring plan
-- `538GOP_PL`: Congressional district ID in 538’s Republican favoring plan
-- `8THGRADE_1`: Congressional district ID in Jon Kimmel’s eighth grade class’s second redistricting plan
-- `HISP_POP`: 2010 Hispanic or Latino population
-- `TOT_POP`: 2010 Total population
-- `WHITE_POP`: 2010 White alone population
-- `BLACK_POP`: 2010 Black/African American alone population
-- `NATIVE_POP`: 2010 American Indian or Alaska Native alone population
-- `ASIAN_POP`: 2010 Asian alone population
+- `CD_2011`: Congressional district ID in 2011 enacted congressional map
+- `SEND`: State Senate district ID
+- `HDIST`: State House district ID
+- `538DEM`: FiveThirtyEight Democratic favoring plan
+- `538GOP`: FiveThirtyEight GOP favoring plan
+- `538CMPCT`: FiveThirtyEight plan favoring compactness
 
 ## Projection
 The shapefile uses a WGS 84 geographic coordinate system.
