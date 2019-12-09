@@ -83,7 +83,10 @@ Below is a brief description of each of the listed variables in the attribute ta
 - `538CMPCT`: FiveThirtyEight plan favoring compactness
 
 ## Projection
-The shapefile uses a WGS 84 geographic coordinate system.
+The shapefile uses a NAD83 geographic coordinate system.
 
 ## Rating
 We give this shapefile a C rating as election results were compiled by a private individual rather than by ourselves or the Secretary of State's offce. While election results were verified at the state and county levels, we acknowledge the possibility of error at the sub-county level.
+
+## Some notes on contiguity
+VTDs in this shapefile come with district assignments for several plans relevant to the 2018 State Supreme Court case. It is important to note that because most of the plans were drawn using census blocks, there are places where the legal plans cut through the units of this shapefile. VTDs were assigned to the district that contains the majority of its area. In places this creates noncontiguous districts which can cause errors when trying to use the plan as an initial partition for [GerryChain](https://github.com/mggg/GerryChain). We suggest using the function `recursive_tree_part` to create a seed plan as a starting point. If it is important to use one of the plans provided as a starting point for chain, adding edges on your dual graph between nodes (7648,7635) and (1247,1160) should fix connectivity problems for `CD_2011` and `GOV`. The `538DEM` and `538CMPCT` plans have some VTDs that look to be incorrectly assigned in the shapefiles provided on FiveThirtyEight's [Atlas of Redistricting repository](https://github.com/fivethirtyeight/redistricting-atlas-data). We have chosen to follow their assignments, but would suggest reassigning `GEOID10` = '420033150' to district '12' to make the `538DEM` plan contiguous and reassigning '42061430' to district '09' and '4210380' and '4210370' to district '17' to make the `538CMPCT` plan contiguous. For more information, please refer to this GerryChain [documentation](https://gerrychain.readthedocs.io/en/latest/user/islands.html#discontiguous-plans).
