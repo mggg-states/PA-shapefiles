@@ -5,8 +5,7 @@ Geometry and Gerrymandering Group (MGGG) at Tufts and MIT, with major support fr
 Research Grant at MIT and from the Jonathon M. Tisch College of Civic Life at Tufts.
 
 ## Sources
-The 2011 voting tabulation district (VTD) and 2010 census block shapefiles were obtained from the US Census Bureau’s [TIGER/Line Shapefiles](https://www.census.gov/geographies/mapping-files/time-series/geo/tiger-line-file.html). Block level demographic data for the 2010 Decennial Census were retrieved using the [Census API](https://api.census.gov/data/2010/dec/sf1). Election data was compiled at the precinct level by a private individual 
-and was found to be within 1% of the official state-reported results at the county and state levels. 
+The 2011 voting tabulation district (VTD) and 2010 census block shapefiles were obtained from the US Census Bureau’s [TIGER/Line Shapefiles](https://www.census.gov/geographies/mapping-files/time-series/geo/tiger-line-file.html). Block level demographic data for the 2010 Decennial Census were retrieved using the [Census API](https://api.census.gov/data/2010/dec/sf1). Election data was compiled at the precinct level by a private individual. 
 
 ## Processing
 Demographic data were aggregated from the census block level and precincts were assigned to districts using [MGGG's proration software](https://github.com/mggg/maup). Election data were also prorated onto VTDs from the original precinct shapefile using the `maup` package.
@@ -54,8 +53,8 @@ Below is a brief description of each of the listed variables in the attribute ta
 - `2MOREVAP`: Two or more races, non-hispanic, voting age population in 2010 Census
 - `ATG12D`: Number of votes for 2012 Democratic attorney general candidate
 - `ATG12R`: Number of votes for 2012 Republican attorney general candidate
-- `F2014GOVD`: Number of votes for 2014 Democratic gubernatorial candidate
-- `F2014GOVR`: Number of votes for 2014 Republican gubernatorial candidate
+- `GOV14D`: Number of votes for 2014 Democratic gubernatorial candidate
+- `GOV14R`: Number of votes for 2014 Republican gubernatorial candidate
 - `GOV10D`: Number of votes for 2010 Democratic gubernatorial candidate
 - `GOV10R`: Number of votes for 2010 Republican gubernatorial candidate
 - `PRES12D`: Number of votes for 2012 Democratic presidential candidate
@@ -83,7 +82,7 @@ Below is a brief description of each of the listed variables in the attribute ta
 - `538CMPCT`: FiveThirtyEight plan favoring compactness
 
 ## Projection
-The shapefile uses a NAD83 geographic coordinate system.
+The shapefile uses a UTM Zone 18N projection (EPSG: 26918).
 
 ## Rating
 We give this shapefile a C rating as election results were compiled by a private individual rather than by ourselves or the Secretary of State's offce. While election results were verified at the state and county levels, we acknowledge the possibility of error at the sub-county level.
