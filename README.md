@@ -2,7 +2,7 @@
 This shapefile was processed by MGGG staff and members of the Voting Rights Data Institute. 
 The Voting Rights Data Institute (VRDI) was a 2018 summer intensive sponsored by the Metric 
 Geometry and Gerrymandering Group (MGGG) at Tufts and MIT, with major support from a Bose 
-Research Grant at MIT and from the Jonathon M. Tisch College of Civic Life at Tufts.
+Research Grant at MIT and from the Jonathan M. Tisch College of Civic Life at Tufts.
 
 ## Sources
 The 2011 voting tabulation district (VTD) and 2010 census block shapefiles were obtained from the US Census Bureau’s [TIGER/Line Shapefiles](https://www.census.gov/geographies/mapping-files/time-series/geo/tiger-line-file.html). Block level demographic data for the 2010 Decennial Census were retrieved using the [Census API](https://api.census.gov/data/2010/dec/sf1). Election data was compiled at the precinct level by a private individual. 
