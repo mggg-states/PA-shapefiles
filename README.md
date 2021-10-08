@@ -94,13 +94,13 @@ VTDs in this shapefile come with district assignments for several plans relevant
 2014 and 2020 elections were added to this dataset as a new beta version shapefile in October 2021, compiled and processed by MGGG lab members. These elections were sourced from the the Pennsylvania Secertary of State Office and were joined to the pre-existing 2016-2018 election results on 2020 vtd shapes. This shapefile maintains the C rating due to the difficulties in the joining process. The shapefile holds a 99.5% vote count accuracy. 
 
 Definitions for the columns novel to this version are listed below: 
-AG20D- Votes for Democratic Attorney General candidate 2020 (Josh Shapiro)
-AG20R- Votes for Republican Attorney General candidate 2020 (Heather Heidelbaugh)
-AUD20D- Votes for Democratic Auditor candidate 2020 (Nina Ahmad)
-AUD20R- Votes for Republican Auditor candidate 2020 (Timothy DeFoor)
-TRES20D- Votes for Democratic Treasurer candidate 2020 (Joe Torsella)
-TRES20R- Votes for Republican Treasurer candidate 2020 (Stacy Garrity)
-PRES20D- Votes for Democratic Presidential candidate 2020 (Joe Biden)
-PRES20R- Votes for Republican Presidential candidate 2020 (Donald Trump)
-GOV14D- Votes for Democratic Gubernatorial candidate 2014 (Tom Wolf)
-GOV14R- Votes for Republican Gubernatorial candidate 2014 (Tom Corbett)
+- `AG20D`: Votes for Democratic Attorney General candidate 2020 (Josh Shapiro)
+- `AG20R`: Votes for Republican Attorney General candidate 2020 (Heather Heidelbaugh)
+- `AUD20D`: Votes for Democratic Auditor candidate 2020 (Nina Ahmad)
+- `AUD20R`: Votes for Republican Auditor candidate 2020 (Timothy DeFoor)
+- `TRES20D`: Votes for Democratic Treasurer candidate 2020 (Joe Torsella)
+- `TRES20R`: Votes for Republican Treasurer candidate 2020 (Stacy Garrity)
+- `PRES20D`: Votes for Democratic Presidential candidate 2020 (Joe Biden)
+- `PRES20R`: Votes for Republican Presidential candidate 2020 (Donald Trump)
+- `GOV14D`: Votes for Democratic Gubernatorial candidate 2014 (Tom Wolf)
+- `GOV14R`: Votes for Republican Gubernatorial candidate 2014 (Tom Corbett)
